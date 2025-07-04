@@ -1,0 +1,11 @@
+<div class="contact-card">
+  <h3>{{ name }}</h3>
+  <p>Email: {{ email }}</p>
+  <p>Phone: {{ phone }}</p>
+  <div>
+    <button [routerLink]="['/contacts', id]">View details routerlink</button>
+    <button (click)="onNavigate()">View details navigate</button>
+    <button (click)="onNavigateByUrl()">View details navigateByUrl</button>
+  </div>
+  <button (click)="onNotifyParentClicked()">Notify parent</button>
+</div>

@@ -1,12 +1,21 @@
 <h2>Contacts</h2>
 <p>A message will appear here when notify is clicked: {{message}}</p>
 <div class="contacts-list">
+  @for (contact of contacts; track contact) {
   <app-contact-card
-    *ngFor="let contact of contacts"
     [id]="contact.id"
     [name]="contact.name"
     [email]="contact.email"
     [phone]="contact.phone"
     (notifyParent)="handleNotification($event)"
   ></app-contact-card>
+  }
+  <!-- <app-contact-card
+    *ngFor="let contact of contacts"
+    [id]="contact.id"
+    [name]="contact.name"
+    [email]="contact.email"
+    [phone]="contact.phone"
+    (notifyParent)="handleNotification($event)"
+  ></app-contact-card> -->
 </div>

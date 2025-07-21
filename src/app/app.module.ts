@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
+    // AboutComponent, should no longer declare the standalone component inside the module, standalone components are self declared
     HomeComponent,
     NotFoundComponent
   ],

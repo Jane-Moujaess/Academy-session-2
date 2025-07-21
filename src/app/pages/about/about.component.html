@@ -1,3 +1,39 @@
 <p>About section</p>
 <input [(ngModel)]="name" placeholder="Enter your name" />
 <p>Hello, {{ name }}!</p>
+
+<div style="display: flex; justify-content: space-around;">
+    <div>
+        <h2>Regular counter section</h2>
+        <p>Counter: {{regularCounter}}</p>
+        <p>Derived counter: {{regularDerivedCounter}}</p>
+        <button (click)="incrementRegularCounter()">Increment regular counter</button>
+    </div>
+
+    <div>
+        <h2>Subject counter section</h2>
+        <p>Counter: {{subjectCounter|async}}</p>
+        <p>Derived counter: {{subjectDerivedCounter}}</p>
+        <button (click)="incrementSubjectCounter()">Increment subject counter</button>
+    </div>
+
+    <div>
+        <h2>Signal counter section</h2>
+        <p>Counter: {{signalCounter()}}</p>
+        <p>Derived counter: {{signalDerivedCounter()}}</p>
+        <button (click)="incrementSignalCounter()">Increment signal counter</button>
+
+        <p>Multiplier: {{signalMultiplier()}}</p>
+        <button (click)="incrementSignalMultiplier()">Increment multiplier</button>
+        <p>Derived signal, it is equal to counter*multiplier: {{signalDerivedMultiplier()}}</p>
+    </div>
+</div>
+
+<h3>Override signals inside effects with allowSignalWrites</h3>
+<p>Signal to override in effect: {{signalOverrideInEffect()}}</p>
+
+<h3>Override equality of signals</h3>
+<button (click)="replaceSameSignal()">Update signal equality test</button>
+
+
+
